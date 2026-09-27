@@ -1,34 +1,58 @@
 public class Q01EvenOdd {
 
-    static boolean isEven(int num) {
-        return num % 2 == 0;
-    }
-
-    static boolean isOdd(int num) {
-        return num % 2 != 0;
-    }
-
     public static void main(String[] args) {
-        System.out.println(isEven(4));
-        System.out.println(isOdd(7));
-        System.out.println(isEven(5));
+
+        int num = 5;
+
+        if (num % 2 == 0) {
+            System.out.println("Even");
+        } else {
+            System.out.println("Odd");
+        }
     }
 }
 
- /*
+/*
  HOW THIS FILE WORKS
 
- I check the remainder after dividing the number by 2. If the remainder is 0, the number is even. Otherwise, it is odd.
+ I store a number in the num variable.
+
+ Then I use an if-else condition to check the remainder when the number is divided by 2.
+
+ If num % 2 == 0, the number is Even.
+ Otherwise, the number is Odd.
 
  IMPORTANT KEYWORDS
 
- static -> Defines a method that belongs to the class.
-boolean -> Data type that stores true or false.
-% -> Modulus operator that returns the remainder.
-return -> Sends a value back from the method.
-main() -> Starting point of a Java program.
+ int
+ -> Stores an integer value.
+
+ if
+ -> Executes the block when the condition is true.
+
+ else
+ -> Executes the block when the if condition is false.
+
+ %
+ -> Modulus operator. It returns the remainder.
+
+ ==
+ -> Compares two values.
+
+ System.out.println()
+ -> Prints the result on the console.
+
+ main()
+ -> Starting point of the Java program.
 
  FLOW
 
- Number -> divide by 2 -> check remainder -> true/false
- */
+ Number
+   ↓
+ num % 2
+   ↓
+ Remainder == 0 ?
+   ↓
+ Yes → Even
+ No  → Odd
+*/
