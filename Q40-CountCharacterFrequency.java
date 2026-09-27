@@ -1,36 +1,50 @@
 import java.util.HashMap;
-import java.util.Map;
 
 public class Q40CountCharacterFrequency {
 
-    static Map<Character, Integer> countCharacterFrequency(String str) {
-        Map<Character, Integer> frequency = new HashMap<>();
+    public static void main(String[] args) {
+
+        String str = "hello";
+
+        HashMap<Character, Integer> frequency = new HashMap<>();
 
         for (char ch : str.toCharArray()) {
-            frequency.put(ch, frequency.getOrDefault(ch, 0) + 1);
+
+            if (frequency.containsKey(ch)) {
+                frequency.put(ch, frequency.get(ch) + 1);
+            } else {
+                frequency.put(ch, 1);
+            }
         }
 
-        return frequency;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(countCharacterFrequency("hello"));
+        System.out.println(frequency);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I use a map where each character is a key and the number of times it appears is the value.
+I store each character as a key in the HashMap.
 
- IMPORTANT KEYWORDS
+Its frequency is stored as the value.
 
- Map -> Key-value collection.
-HashMap -> Stores mappings.
-Character -> Wrapper type for char.
-getOrDefault() -> Reads current count or uses 0.
+If the character already exists, I increase its count.
 
- FLOW
+IMPORTANT KEYWORDS
 
- Character -> lookup frequency -> increment -> final frequency map
- */
+Character
+-> Wrapper class for char.
+
+HashMap
+-> Stores key-value pairs.
+
+containsKey()
+-> Checks whether a key exists.
+
+put()
+-> Adds or updates a value.
+
+FLOW
+
+Character -> key exists? -> increase count / add 1
+*/

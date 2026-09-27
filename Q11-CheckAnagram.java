@@ -2,35 +2,50 @@ import java.util.Arrays;
 
 public class Q11CheckAnagram {
 
-    static boolean isAnagram(String str1, String str2) {
+    public static void main(String[] args) {
+
+        String str1 = "listen";
+        String str2 = "silent";
+
         char[] arr1 = str1.toCharArray();
         char[] arr2 = str2.toCharArray();
 
         Arrays.sort(arr1);
         Arrays.sort(arr2);
 
-        return Arrays.equals(arr1, arr2);
-    }
-
-    public static void main(String[] args) {
-        System.out.println(isAnagram("listen", "silent"));
-        System.out.println(isAnagram("hey", "mnh"));
+        if (Arrays.equals(arr1, arr2)) {
+            System.out.println("Anagram");
+        } else {
+            System.out.println("Not Anagram");
+        }
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I convert both strings to character arrays, sort them, and compare the sorted arrays. Anagrams produce the same sorted character sequence.
+I convert both strings into character arrays.
 
- IMPORTANT KEYWORDS
+Then I sort both arrays.
 
- toCharArray() -> Converts a String into a char array.
-Arrays.sort() -> Sorts an array.
-Arrays.equals() -> Compares array contents.
-char[] -> Array of characters.
+If the sorted arrays are equal, both strings contain the same characters,
+so they are anagrams.
 
- FLOW
+IMPORTANT KEYWORDS
 
- String -> char array -> sort -> compare arrays -> anagram result
- */
+toCharArray()
+-> Converts a String into a character array.
+
+Arrays.sort()
+-> Sorts an array.
+
+Arrays.equals()
+-> Compares array contents.
+
+char[]
+-> Array of characters.
+
+FLOW
+
+String -> char array -> sort -> compare -> Anagram / Not Anagram
+*/

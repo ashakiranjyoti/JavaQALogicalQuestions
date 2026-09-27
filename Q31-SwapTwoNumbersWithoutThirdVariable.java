@@ -1,33 +1,41 @@
 public class Q31SwapTwoNumbersWithoutThirdVariable {
 
-    static int[] swapNumbers(int a, int b) {
+    public static void main(String[] args) {
+
+        int a = 10;
+        int b = 20;
+
         a = a + b;
         b = a - b;
         a = a - b;
 
-        return new int[]{a, b};
-    }
-
-    public static void main(String[] args) {
-        int[] result = swapNumbers(10, 20);
-        System.out.println(result[0]);
-        System.out.println(result[1]);
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I use arithmetic to swap the two values without introducing another variable. After a=a+b, the original values can be recovered with subtraction.
+I swap the two numbers using addition and subtraction.
 
- IMPORTANT KEYWORDS
+No third variable is used.
 
- Assignment -> Updates a variable.
-+ and - -> Arithmetic operators.
-new int[] -> Creates an integer array.
-return -> Returns the swapped values.
+IMPORTANT KEYWORDS
 
- FLOW
+=
+-> Assignment operator.
 
- a=10,b=20 -> a=30 -> b=10 -> a=20 -> swapped
- */
++
+-> Addition.
+
+-
+-> Subtraction.
+
+int
+-> Stores an integer.
+
+FLOW
+
+a=10, b=20 -> a=30 -> b=10 -> a=20
+*/

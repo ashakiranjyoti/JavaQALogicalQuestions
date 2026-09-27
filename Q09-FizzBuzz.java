@@ -1,6 +1,7 @@
 public class Q09FizzBuzz {
 
-    static void fizzBuzz() {
+    public static void main(String[] args) {
+
         for (int i = 1; i <= 100; i++) {
 
             if (i % 3 == 0 && i % 5 == 0) {
@@ -14,25 +15,32 @@ public class Q09FizzBuzz {
             }
         }
     }
-
-    public static void main(String[] args) {
-        fizzBuzz();
-    }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I loop from 1 to 100 and check divisibility using %. I check the combined condition first so multiples of both 3 and 5 print FizzBuzz.
+I loop from 1 to 100.
 
- IMPORTANT KEYWORDS
+I first check numbers divisible by both 3 and 5.
+Then I check 3, then 5.
+Otherwise I print the number.
 
- % -> Returns remainder.
-&& -> Logical AND.
-else if -> Checks another condition when the previous one is false.
-System.out.println() -> Prints output to the console.
+IMPORTANT KEYWORDS
 
- FLOW
+%
+-> Returns the remainder.
 
- 1 to 100 -> divisible by 3 and 5? -> FizzBuzz / 3? -> Fizz / 5? -> Buzz / otherwise number
- */
+&&
+-> Logical AND.
+
+else if
+-> Checks another condition.
+
+<=
+-> Less-than-or-equal operator.
+
+FLOW
+
+1 to 100 -> check 3 and 5 -> FizzBuzz / Fizz / Buzz / number
+*/

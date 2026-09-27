@@ -1,35 +1,41 @@
 public class Q25CountWordsInString {
 
-    static int countWords(String str) {
-        String value = str.trim();
-
-        if (value.isEmpty()) {
-            return 0;
-        }
-
-        String[] words = value.split("\\s+");
-        return words.length;
-    }
-
     public static void main(String[] args) {
-        System.out.println(countWords("I am learning Java"));
+
+        String str = "I am learning Java";
+
+        str = str.trim();
+
+        String[] words = str.split("\\s+");
+
+        System.out.println(words.length);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I remove extra spaces at the ends, handle the empty-string case, split the remaining text by one or more whitespace characters, and return the array length.
+I remove extra spaces from the beginning and end using trim().
 
- IMPORTANT KEYWORDS
+Then I split the string into words.
 
- trim() -> Removes leading and trailing spaces.
-split() -> Splits a string into parts.
-\\s+ -> Matches one or more whitespace characters.
-String[] -> Array of strings.
-isEmpty() -> Checks whether the string has no characters.
+The length of the String array gives the number of words.
 
- FLOW
+IMPORTANT KEYWORDS
 
- Input -> trim -> split into words -> length -> word count
- */
+trim()
+-> Removes leading and trailing spaces.
+
+split()
+-> Splits a String into parts.
+
+String[]
+-> Array of Strings.
+
+length
+-> Number of elements in the array.
+
+FLOW
+
+Sentence -> trim -> split into words -> length -> word count
+*/

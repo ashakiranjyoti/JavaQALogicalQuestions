@@ -1,27 +1,44 @@
 public class Q13CountLetter {
 
-    static int countLetters(String str) {
-        String value = str.replace(" ", "");
-        return value.length();
-    }
-
     public static void main(String[] args) {
-        System.out.println(countLetters("Hey h"));
+
+        String str = "Hey h";
+
+        int count = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+
+            if (str.charAt(i) != ' ') {
+                count++;
+            }
+        }
+
+        System.out.println(count);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I remove spaces from the string and then return the length of the remaining text.
+I check every character in the string.
 
- IMPORTANT KEYWORDS
+If the character is not a space, I increase the count.
 
- replace() -> Replaces occurrences of one character or string with another.
-length() -> Returns the number of characters.
-String -> Stores text.
+IMPORTANT KEYWORDS
 
- FLOW
+!=
+-> Checks that two values are not equal.
 
- Input -> remove spaces -> length -> letter count
- */
+charAt()
+-> Gets a character.
+
+count++
+-> Increases the counter.
+
+length()
+-> Returns string length.
+
+FLOW
+
+String -> check each character -> space? -> no: count++
+*/

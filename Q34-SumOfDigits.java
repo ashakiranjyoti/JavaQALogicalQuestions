@@ -1,35 +1,46 @@
 public class Q34SumOfDigits {
 
-    static int sumOfDigits(int num) {
+    public static void main(String[] args) {
+
+        int num = 1234;
+
         int sum = 0;
 
         while (num > 0) {
+
             int digit = num % 10;
-            sum += digit;
+
+            sum = sum + digit;
+
             num = num / 10;
         }
 
-        return sum;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(sumOfDigits(1234));
+        System.out.println(sum);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I extract one digit at a time with the modulus operator and add it to sum. Integer division removes the processed digit.
+I take one digit at a time from the number and add it to sum.
 
- IMPORTANT KEYWORDS
+The loop continues until the number becomes 0.
 
- % -> Returns the last digit as remainder.
-+= -> Adds a value to the existing variable.
-while -> Repeats while condition is true.
-/ -> Integer division for int values.
+IMPORTANT KEYWORDS
 
- FLOW
+sum
+-> Stores the total.
 
- 1234 -> 4 -> 3 -> 2 -> 1 -> add digits -> 10
- */
+%
+-> Gets the last digit.
+
+while
+-> Repeats until the condition becomes false.
+
+/
+-> Removes the last digit.
+
+FLOW
+
+1234 -> 4 -> 3 -> 2 -> 1 -> add -> 10
+*/

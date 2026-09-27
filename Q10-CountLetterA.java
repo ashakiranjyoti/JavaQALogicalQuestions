@@ -1,36 +1,46 @@
 public class Q10CountLetterA {
 
-    static int countLetterA(String str) {
-        String lower = str.toLowerCase();
+    public static void main(String[] args) {
+
+        String str = "Ashakiran";
+        str = str.toLowerCase();
+
         int count = 0;
 
-        for (int i = 0; i < lower.length(); i++) {
-            if (lower.charAt(i) == 'a') {
+        for (int i = 0; i < str.length(); i++) {
+
+            if (str.charAt(i) == 'a') {
                 count++;
             }
         }
 
-        return count;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(countLetterA("Ashakiran"));
+        System.out.println(count);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I convert the string to lowercase and scan every character. Whenever the character is 'a', I increase the counter.
+I convert the string to lowercase so both A and a are treated the same.
 
- IMPORTANT KEYWORDS
+Then I check every character.
+Whenever I find 'a', I increase count.
 
- toLowerCase() -> Converts the string to lowercase.
-charAt() -> Gets a character by index.
-count++ -> Increases count by one.
-== -> Compares primitive values.
+IMPORTANT KEYWORDS
 
- FLOW
+toLowerCase()
+-> Converts text to lowercase.
 
- String -> lowercase -> check each char -> increment count -> return count
- */
+charAt()
+-> Gets one character.
+
+count++
+-> Increases the count by 1.
+
+char
+-> Stores one character.
+
+FLOW
+
+String -> lowercase -> check each character -> count 'a'
+*/

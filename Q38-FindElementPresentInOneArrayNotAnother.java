@@ -1,52 +1,53 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Q38FindElementPresentInOneArrayNotAnother {
 
-    static List<Integer> findDifference(int[] arr1, int[] arr2) {
-        List<Integer> result = new ArrayList<>();
+    public static void main(String[] args) {
 
-        for (int num : arr1) {
+        int[] arr1 = {1, 2, 3, 4};
+        int[] arr2 = {2, 4};
+
+        System.out.println("Elements only in first array:");
+
+        for (int i = 0; i < arr1.length; i++) {
+
             boolean found = false;
 
-            for (int value : arr2) {
-                if (num == value) {
+            for (int j = 0; j < arr2.length; j++) {
+
+                if (arr1[i] == arr2[j]) {
                     found = true;
                     break;
                 }
             }
 
             if (!found) {
-                result.add(num);
+                System.out.println(arr1[i]);
             }
         }
-
-        return result;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(
-            findDifference(
-                new int[]{1, 2, 3, 4},
-                new int[]{2, 4}
-            )
-        );
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I check every element of the first array against the second array. If the value is never found in the second array, I add it to the result list.
+For every value in the first array, I search for the same value in the second array.
 
- IMPORTANT KEYWORDS
+If I do not find it, I print that value.
 
- boolean -> Tracks whether a match was found.
-break -> Stops searching after a match.
-! -> Logical NOT.
-List -> Stores the final elements.
+IMPORTANT KEYWORDS
 
- FLOW
+boolean
+-> Stores true or false.
 
- First array value -> search second array -> found? skip : add to result
- */
+found
+-> Tells whether a match was found.
+
+!
+-> Logical NOT.
+
+nested for
+-> Loop inside another loop.
+
+FLOW
+
+First array value -> search second array -> found? -> no: print
+*/

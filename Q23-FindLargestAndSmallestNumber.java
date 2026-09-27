@@ -1,13 +1,14 @@
-import java.util.HashMap;
-import java.util.Map;
-
 public class Q23FindLargestAndSmallestNumber {
 
-    static Map<String, Integer> findMinMax(int[] arr) {
-        int smallest = arr[0];
-        int largest = arr[0];
+    public static void main(String[] args) {
 
-        for (int num : arr) {
+        int[] numbers = {25, 10, 45, 5, 30};
+
+        int smallest = numbers[0];
+        int largest = numbers[0];
+
+        for (int num : numbers) {
+
             if (num < smallest) {
                 smallest = num;
             }
@@ -17,33 +18,33 @@ public class Q23FindLargestAndSmallestNumber {
             }
         }
 
-        Map<String, Integer> result = new HashMap<>();
-        result.put("smallest", smallest);
-        result.put("largest", largest);
-
-        return result;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(
-            findMinMax(new int[]{25, 10, 45, 5, 30})
-        );
+        System.out.println("Smallest: " + smallest);
+        System.out.println("Largest: " + largest);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I initialize both smallest and largest with the first element. Every value is compared with both variables and the matching variable is updated.
+I use the first element as both smallest and largest.
 
- IMPORTANT KEYWORDS
+Then I compare every number and update the correct variable.
 
- HashMap -> Key-value map implementation.
-smallest/largest -> Track current boundaries.
-if -> Conditional statement.
-put() -> Adds the final values to the result map.
+IMPORTANT KEYWORDS
 
- FLOW
+for-each
+-> Loops through array values.
 
- First value -> compare for smallest -> compare for largest -> update -> final min/max
- */
+smallest
+-> Stores the smallest value.
+
+largest
+-> Stores the largest value.
+
+if
+-> Checks a condition.
+
+FLOW
+
+First value -> compare for smallest -> compare for largest -> update
+*/

@@ -2,33 +2,40 @@ import java.util.Arrays;
 
 public class Q42FindSecondSmallestNumber {
 
-    static int secondSmallest(int[] arr) {
-        int[] sorted = Arrays.copyOf(arr, arr.length);
-        Arrays.sort(sorted);
-
-        return sorted[1];
-    }
-
     public static void main(String[] args) {
-        System.out.println(
-            secondSmallest(new int[]{10, 5, 20, 3, 8})
-        );
+
+        int[] numbers = {10, 5, 20, 3, 8};
+
+        Arrays.sort(numbers);
+
+        int secondSmallest = numbers[1];
+
+        System.out.println(secondSmallest);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I copy the array, sort the copy in ascending order, and return the element at index 1, which is the second smallest value.
+I sort the array in ascending order.
 
- IMPORTANT KEYWORDS
+After sorting, index 0 is the smallest and index 1 is the second smallest.
 
- Arrays.copyOf() -> Creates a copy of an array.
-Arrays.sort() -> Sorts the array.
-index 1 -> Second position because Java indexes start at 0.
-return -> Returns the second smallest value.
+IMPORTANT KEYWORDS
 
- FLOW
+Arrays.sort()
+-> Sorts the array in ascending order.
 
- Original array -> copy -> sort ascending -> index 1 -> second smallest
- */
+index
+-> Position of an element in an array.
+
+[1]
+-> Second element because Java starts indexing from 0.
+
+int[]
+-> Integer array.
+
+FLOW
+
+Array -> sort -> index 0 smallest -> index 1 second smallest
+*/

@@ -1,35 +1,45 @@
 public class Q15FindSmallestInArray {
 
-    static int findSmallest(int[] arr) {
-        int smallest = arr[0];
+    public static void main(String[] args) {
 
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] < smallest) {
-                smallest = arr[i];
+        int[] numbers = {5, 2, 8, 1, 9};
+
+        int smallest = numbers[0];
+
+        for (int i = 1; i < numbers.length; i++) {
+
+            if (numbers[i] < smallest) {
+                smallest = numbers[i];
             }
         }
 
-        return smallest;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(findSmallest(new int[]{5, 2, 8, 1, 9}));
+        System.out.println(smallest);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I assume the first element is the smallest. I compare every next element with smallest and update it whenever a smaller value is found.
+I assume the first number is the smallest.
 
- IMPORTANT KEYWORDS
+Then I compare every next number with smallest.
+If I find a smaller number, I update smallest.
 
- < -> Less-than comparison.
-int[] -> Integer array.
-for -> Repeats the comparison for every element.
-return -> Returns the smallest value.
+IMPORTANT KEYWORDS
 
- FLOW
+<
+-> Less-than operator.
 
- First value as smallest -> compare -> update when smaller -> final smallest
- */
+int[]
+-> Integer array.
+
+for
+-> Repeats code.
+
+smallest
+-> Stores the current smallest value.
+
+FLOW
+
+First number -> compare -> smaller? -> update -> final smallest
+*/

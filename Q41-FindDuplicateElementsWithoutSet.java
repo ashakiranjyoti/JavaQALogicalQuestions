@@ -1,40 +1,48 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Q41FindDuplicateElementsWithoutSet {
 
-    static List<Integer> removeDuplicates(int[] arr) {
-        List<Integer> unique = new ArrayList<>();
+    public static void main(String[] args) {
 
-        for (int num : arr) {
+        int[] numbers = {1, 2, 2, 3, 3, 4};
+
+        ArrayList<Integer> unique = new ArrayList<>();
+
+        for (int num : numbers) {
+
             if (!unique.contains(num)) {
                 unique.add(num);
             }
         }
 
-        return unique;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(
-            removeDuplicates(new int[]{1, 2, 2, 3, 3, 4})
-        );
+        System.out.println(unique);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I use an ArrayList to store unique values. Before adding each number, I check contains(). If the value is already in the list, I skip it.
+I do not use Set.
 
- IMPORTANT KEYWORDS
+I keep unique values inside an ArrayList.
 
- contains() -> Checks whether a collection already has a value.
-ArrayList -> Resizable list.
-if -> Conditional statement.
-add() -> Adds a new value to the list.
+Before adding a number, I check whether it is already present.
 
- FLOW
+IMPORTANT KEYWORDS
 
- Number -> contains? -> skip if present -> otherwise add -> unique list
- */
+ArrayList
+-> Resizable list.
+
+contains()
+-> Checks whether a value exists in the list.
+
+add()
+-> Adds a value.
+
+for-each
+-> Loops through array values.
+
+FLOW
+
+Number -> already in list? -> yes: skip -> no: add
+*/

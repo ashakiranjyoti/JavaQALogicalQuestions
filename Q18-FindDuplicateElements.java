@@ -1,41 +1,46 @@
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 public class Q18FindDuplicateElements {
 
-    static List<Integer> findDuplicates(int[] arr) {
-        Set<Integer> seen = new HashSet<>();
-        List<Integer> duplicates = new ArrayList<>();
+    public static void main(String[] args) {
 
-        for (int num : arr) {
-            if (!seen.add(num)) {
-                duplicates.add(num);
+        int[] numbers = {1, 2, 3, 2, 4, 3};
+
+        HashSet<Integer> seen = new HashSet<>();
+
+        for (int num : numbers) {
+
+            if (seen.contains(num)) {
+                System.out.println(num);
+            } else {
+                seen.add(num);
             }
         }
-
-        return duplicates;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(findDuplicates(new int[]{1, 2, 3, 2, 4, 3}));
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I keep already-seen values in a Set. Set.add() returns false when the value already exists, so that value is added to the duplicate list.
+I use a HashSet to store numbers that I have already seen.
 
- IMPORTANT KEYWORDS
+If a number is already in the Set, it is a duplicate.
 
- HashSet -> Stores unique values.
-add() -> Adds a value and returns false for duplicates in a Set.
-List -> Ordered collection.
-boolean -> Stores true or false.
+IMPORTANT KEYWORDS
 
- FLOW
+HashSet
+-> Stores unique values.
 
- Read number -> add to seen -> already present? -> add to duplicates
- */
+contains()
+-> Checks whether a value exists.
+
+add()
+-> Adds a value.
+
+for-each
+-> Loops through array values.
+
+FLOW
+
+Number -> already in Set? -> yes: duplicate -> no: add to Set
+*/

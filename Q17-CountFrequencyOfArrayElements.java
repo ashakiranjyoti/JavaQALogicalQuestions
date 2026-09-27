@@ -1,36 +1,51 @@
 import java.util.HashMap;
-import java.util.Map;
 
 public class Q17CountFrequencyOfArrayElements {
 
-    static Map<Integer, Integer> countFrequency(int[] arr) {
-        Map<Integer, Integer> frequency = new HashMap<>();
+    public static void main(String[] args) {
 
-        for (int num : arr) {
-            frequency.put(num, frequency.getOrDefault(num, 0) + 1);
+        int[] numbers = {1, 2, 2, 3, 3, 3};
+
+        HashMap<Integer, Integer> frequency = new HashMap<>();
+
+        for (int num : numbers) {
+
+            if (frequency.containsKey(num)) {
+                frequency.put(num, frequency.get(num) + 1);
+            } else {
+                frequency.put(num, 1);
+            }
         }
 
-        return frequency;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(countFrequency(new int[]{1, 2, 2, 3, 3, 3}));
+        System.out.println(frequency);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I use a HashMap where the array value is the key and its frequency is the value. For every element, I get the current count and add one.
+I use a HashMap.
 
- IMPORTANT KEYWORDS
+The number is stored as the key and its count is stored as the value.
 
- Map -> Stores key-value pairs.
-HashMap -> Map implementation used for fast key lookup.
-put() -> Inserts or updates a key-value pair.
-getOrDefault() -> Gets a value or returns a default when the key is absent.
+If the number already exists, I increase its count.
+Otherwise, I add it with count 1.
 
- FLOW
+IMPORTANT KEYWORDS
 
- Array -> key lookup -> increase count -> frequency map
- */
+HashMap
+-> Stores key-value pairs.
+
+containsKey()
+-> Checks whether a key already exists.
+
+put()
+-> Adds or updates a key-value pair.
+
+get()
+-> Gets the value for a key.
+
+FLOW
+
+Number -> key exists? -> increase count / add 1
+*/

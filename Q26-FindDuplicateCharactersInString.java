@@ -1,47 +1,56 @@
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class Q26FindDuplicateCharactersInString {
 
-    static List<Character> findDuplicateCharacters(String str) {
-        Map<Character, Integer> frequency = new HashMap<>();
+    public static void main(String[] args) {
+
+        String str = "programming";
+
+        HashMap<Character, Integer> frequency = new HashMap<>();
 
         for (char ch : str.toCharArray()) {
-            frequency.put(ch, frequency.getOrDefault(ch, 0) + 1);
-        }
 
-        List<Character> duplicates = new ArrayList<>();
-
-        for (Map.Entry<Character, Integer> entry : frequency.entrySet()) {
-            if (entry.getValue() > 1) {
-                duplicates.add(entry.getKey());
+            if (frequency.containsKey(ch)) {
+                frequency.put(ch, frequency.get(ch) + 1);
+            } else {
+                frequency.put(ch, 1);
             }
         }
 
-        return duplicates;
-    }
+        System.out.println("Duplicate characters:");
 
-    public static void main(String[] args) {
-        System.out.println(findDuplicateCharacters("programming"));
+        for (char ch : frequency.keySet()) {
+
+            if (frequency.get(ch) > 1) {
+                System.out.println(ch);
+            }
+        }
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I count the frequency of every character with a map. Then I inspect the map and collect characters whose frequency is greater than one.
+I first count the frequency of every character using a HashMap.
 
- IMPORTANT KEYWORDS
+Then I check the map again.
+If a character has a count greater than 1, it is a duplicate.
 
- Map.Entry -> Represents one key-value pair in a map.
-getValue() -> Gets the mapped value.
-getKey() -> Gets the key.
-toCharArray() -> Converts String to char array.
-getOrDefault() -> Returns an existing value or a default value.
+IMPORTANT KEYWORDS
 
- FLOW
+Character
+-> Wrapper class for char.
 
- String -> frequency map -> check frequency > 1 -> duplicate characters
- */
+keySet()
+-> Returns all keys from the map.
+
+containsKey()
+-> Checks whether the character already exists.
+
+get()
+-> Gets the stored count.
+
+FLOW
+
+String -> count characters -> frequency > 1 -> duplicate character
+*/

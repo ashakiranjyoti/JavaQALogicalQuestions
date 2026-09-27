@@ -1,34 +1,57 @@
-import java.util.Arrays;
-
 public class Q37CheckTwoArraysAreEqual {
 
-    static boolean areArraysEqual(int[] arr1, int[] arr2) {
-        return Arrays.equals(arr1, arr2);
-    }
-
     public static void main(String[] args) {
-        System.out.println(
-            areArraysEqual(
-                new int[]{1, 2, 3},
-                new int[]{1, 2, 3}
-            )
-        );
+
+        int[] arr1 = {1, 2, 3};
+        int[] arr2 = {1, 2, 3};
+
+        boolean equal = true;
+
+        if (arr1.length != arr2.length) {
+            equal = false;
+        } else {
+
+            for (int i = 0; i < arr1.length; i++) {
+
+                if (arr1[i] != arr2[i]) {
+                    equal = false;
+                    break;
+                }
+            }
+        }
+
+        if (equal) {
+            System.out.println("Arrays are equal");
+        } else {
+            System.out.println("Arrays are not equal");
+        }
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I use Arrays.equals(), which checks that both arrays have the same length and matching elements at each position.
+First I compare the array lengths.
 
- IMPORTANT KEYWORDS
+If lengths are the same, I compare each element at the same index.
 
- Arrays -> Utility class for array operations.
-equals() -> Compares array contents.
-boolean -> Stores true or false.
-return -> Sends the comparison result back.
+If any element is different, the arrays are not equal.
 
- FLOW
+IMPORTANT KEYWORDS
 
- Array 1 -> Array 2 -> compare contents -> true/false
- */
+boolean
+-> Stores true or false.
+
+length
+-> Number of array elements.
+
+break
+-> Stops the loop when a difference is found.
+
+!=
+-> Not-equal operator.
+
+FLOW
+
+Compare length -> compare elements -> any difference? -> result
+*/

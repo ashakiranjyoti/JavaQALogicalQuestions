@@ -1,39 +1,43 @@
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.HashSet;
 
 public class Q08RemoveDuplicatesUsingSet {
 
-    static List<Integer> removeDuplicates(int[] arr) {
-        Set<Integer> unique = new LinkedHashSet<>();
+    public static void main(String[] args) {
 
-        for (int num : arr) {
+        int[] numbers = {4, 8, 2, 4, 3, 9, 2};
+
+        HashSet<Integer> unique = new HashSet<>();
+
+        for (int num : numbers) {
             unique.add(num);
         }
 
-        return new ArrayList<>(unique);
-    }
-
-    public static void main(String[] args) {
-        System.out.println(removeDuplicates(new int[]{4, 8, 2, 4, 3, 9, 2}));
+        System.out.println(unique);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I store the array elements in a LinkedHashSet. A Set keeps only unique values, and LinkedHashSet also preserves insertion order. I then convert it back to a List for easy output.
+I use a HashSet because a Set stores only unique values.
 
- IMPORTANT KEYWORDS
+When I add the array elements, duplicate values are automatically ignored.
 
- Set -> Collection that stores unique values.
-LinkedHashSet -> Set that preserves insertion order.
-add() -> Adds a value; duplicate values are ignored.
-List -> Ordered collection of values.
-import -> Makes Java classes available in the file.
+IMPORTANT KEYWORDS
 
- FLOW
+HashSet
+-> Collection that stores unique values.
 
- Array -> LinkedHashSet -> duplicate values removed -> List
- */
+add()
+-> Adds a value to the Set.
+
+for-each
+-> Loops directly through array values.
+
+Integer
+-> Wrapper class for int.
+
+FLOW
+
+Array -> add values to HashSet -> duplicates removed -> output
+*/

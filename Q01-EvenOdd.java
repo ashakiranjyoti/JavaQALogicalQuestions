@@ -13,46 +13,36 @@ public class Q01EvenOdd {
 }
 
 /*
- HOW THIS FILE WORKS
+HOW THIS FILE WORKS
 
- I store a number in the num variable.
+I store a number in the num variable.
 
- Then I use an if-else condition to check the remainder when the number is divided by 2.
+Then I check the remainder when the number is divided by 2.
 
- If num % 2 == 0, the number is Even.
- Otherwise, the number is Odd.
+If the remainder is 0, the number is Even.
+Otherwise, the number is Odd.
 
- IMPORTANT KEYWORDS
+IMPORTANT KEYWORDS
 
- int
- -> Stores an integer value.
+int
+-> Stores an integer value.
 
- if
- -> Executes the block when the condition is true.
+if
+-> Executes code when the condition is true.
 
- else
- -> Executes the block when the if condition is false.
+else
+-> Executes code when the if condition is false.
 
- %
- -> Modulus operator. It returns the remainder.
+%
+-> Modulus operator. It returns the remainder.
 
- ==
- -> Compares two values.
+==
+-> Compares two values.
 
- System.out.println()
- -> Prints the result on the console.
+System.out.println()
+-> Prints output on the console.
 
- main()
- -> Starting point of the Java program.
+FLOW
 
- FLOW
-
- Number
-   ↓
- num % 2
-   ↓
- Remainder == 0 ?
-   ↓
- Yes → Even
- No  → Odd
+Number -> num % 2 -> remainder 0? -> Even : Odd
 */

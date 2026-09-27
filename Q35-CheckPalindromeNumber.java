@@ -1,37 +1,53 @@
 public class Q35CheckPalindromeNumber {
 
-    static boolean isPalindromeNumber(int num) {
+    public static void main(String[] args) {
+
+        int num = 121;
         int original = num;
+
         int reverse = 0;
 
         while (num > 0) {
+
             int digit = num % 10;
+
             reverse = reverse * 10 + digit;
+
             num = num / 10;
         }
 
-        return original == reverse;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(isPalindromeNumber(121));
-        System.out.println(isPalindromeNumber(123));
+        if (original == reverse) {
+            System.out.println("Palindrome");
+        } else {
+            System.out.println("Not Palindrome");
+        }
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I reverse the number using the digit-extraction logic and compare the reversed number with the original value.
+I save the original number.
 
- IMPORTANT KEYWORDS
+Then I reverse the number using % 10 and / 10.
 
- original -> Keeps the input before modifying it.
-reverse -> Stores the reversed number.
-while -> Repeats the digit extraction.
-== -> Compares numeric values.
+Finally, I compare original and reverse.
 
- FLOW
+IMPORTANT KEYWORDS
 
- Original -> reverse digits -> compare original and reverse -> palindrome result
- */
+original
+-> Stores the input before changing it.
+
+reverse
+-> Stores the reversed number.
+
+==
+-> Compares numeric values.
+
+while
+-> Repeats the reversing logic.
+
+FLOW
+
+Original -> reverse -> compare -> Palindrome / Not Palindrome
+*/

@@ -1,44 +1,48 @@
 public class Q39FindLongestWordInString {
 
-    static String findLongestWord(String str) {
-        String value = str.trim();
+    public static void main(String[] args) {
 
-        if (value.isEmpty()) {
-            return "";
-        }
+        String str = "I am learning Java";
 
-        String[] words = value.split("\\s+");
+        String[] words = str.split(" ");
+
         String longest = words[0];
 
         for (String word : words) {
+
             if (word.length() > longest.length()) {
                 longest = word;
             }
         }
 
-        return longest;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(
-            findLongestWord("I am learning JavaScript")
-        );
+        System.out.println(longest);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I split the sentence into words, assume the first word is longest, and compare every other word by length.
+I split the sentence into words.
 
- IMPORTANT KEYWORDS
+I assume the first word is the longest.
 
- String[] -> Array of strings.
-split() -> Separates the input into words.
-length() -> Returns string length.
-trim() -> Removes leading and trailing spaces.
+Then I compare the length of every word and update longest when needed.
 
- FLOW
+IMPORTANT KEYWORDS
 
- Split sentence -> assume first word -> compare lengths -> update longest
- */
+split()
+-> Splits a String into parts.
+
+String[]
+-> Array of Strings.
+
+length()
+-> Returns the length of a String.
+
+for-each
+-> Loops through each word.
+
+FLOW
+
+Sentence -> split into words -> compare lengths -> longest word
+*/

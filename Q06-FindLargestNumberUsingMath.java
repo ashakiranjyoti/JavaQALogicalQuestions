@@ -1,33 +1,41 @@
 public class Q06FindLargestNumberUsingMath {
 
-    static int findLargest(int[] arr) {
-        int largest = arr[0];
+    public static void main(String[] args) {
 
-        for (int i = 1; i < arr.length; i++) {
-            largest = Math.max(largest, arr[i]);
+        int[] numbers = {3, 7, 2, 4, 9};
+
+        int largest = numbers[0];
+
+        for (int i = 1; i < numbers.length; i++) {
+            largest = Math.max(largest, numbers[i]);
         }
 
-        return largest;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(findLargest(new int[]{3, 7, 2, 4, 9}));
+        System.out.println(largest);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I keep the first element as the current largest value. For every next element, Math.max() returns the bigger of the current largest and that element.
+I take the first element as the current largest value.
 
- IMPORTANT KEYWORDS
+Then I compare each next number with it using Math.max().
 
- Math.max() -> Returns the larger of two values.
-int[] -> Integer array.
-for -> Loops through the array.
-arr.length -> Number of elements in the array.
+IMPORTANT KEYWORDS
 
- FLOW
+int[]
+-> Integer array.
 
- First value -> Math.max(current largest, next value) -> update largest -> continue
- */
+numbers.length
+-> Gives the number of elements in the array.
+
+Math.max()
+-> Returns the larger value.
+
+for
+-> Loops through the array.
+
+FLOW
+
+First number -> compare with next number -> update largest -> repeat
+*/

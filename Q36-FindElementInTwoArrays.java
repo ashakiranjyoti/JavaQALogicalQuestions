@@ -1,46 +1,47 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Q36FindElementInTwoArrays {
 
-    static List<Integer> findCommonElements(int[] arr1, int[] arr2) {
-        List<Integer> common = new ArrayList<>();
+    public static void main(String[] args) {
 
-        for (int num : arr1) {
-            for (int value : arr2) {
-                if (num == value) {
-                    common.add(num);
+        int[] arr1 = {1, 2, 3, 4};
+        int[] arr2 = {3, 4, 5, 6};
+
+        System.out.println("Common elements:");
+
+        for (int i = 0; i < arr1.length; i++) {
+
+            for (int j = 0; j < arr2.length; j++) {
+
+                if (arr1[i] == arr2[j]) {
+                    System.out.println(arr1[i]);
                     break;
                 }
             }
         }
-
-        return common;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(
-            findCommonElements(
-                new int[]{1, 2, 3, 4},
-                new int[]{3, 4, 5, 6}
-            )
-        );
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I scan the first array and check each value against the second array. When a match is found, I add it to the common list and break the inner loop so the same first-array value is not added multiple times.
+I compare every element of the first array with every element of the second array.
 
- IMPORTANT KEYWORDS
+When both values are equal, I print the common element.
 
- break -> Stops the current loop.
-List -> Ordered collection.
-ArrayList -> Resizable list implementation.
-== -> Compares integer primitive values.
+IMPORTANT KEYWORDS
 
- FLOW
+nested for
+-> A loop inside another loop.
 
- First array value -> search second array -> match? -> add -> next value
- */
+==
+-> Compares two values.
+
+break
+-> Stops the inner loop after a match.
+
+int[]
+-> Integer array.
+
+FLOW
+
+First array value -> search second array -> match? -> print
+*/

@@ -1,13 +1,14 @@
-import java.util.HashMap;
-import java.util.Map;
-
 public class Q22CountPositiveAndNegativeNumbers {
 
-    static Map<String, Integer> countPositiveNegative(int[] arr) {
+    public static void main(String[] args) {
+
+        int[] numbers = {10, -5, 20, -8, 15};
+
         int positive = 0;
         int negative = 0;
 
-        for (int num : arr) {
+        for (int num : numbers) {
+
             if (num > 0) {
                 positive++;
             } else if (num < 0) {
@@ -15,33 +16,36 @@ public class Q22CountPositiveAndNegativeNumbers {
             }
         }
 
-        Map<String, Integer> result = new HashMap<>();
-        result.put("positive", positive);
-        result.put("negative", negative);
-
-        return result;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(
-            countPositiveNegative(new int[]{10, -5, 20, -8, 15})
-        );
+        System.out.println("Positive: " + positive);
+        System.out.println("Negative: " + negative);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I use two counters. Positive numbers increase the positive counter, and negative numbers increase the negative counter. Zero is ignored, matching the original logic.
+I use two counters.
 
- IMPORTANT KEYWORDS
+If the number is greater than 0, I increase positive.
+If it is less than 0, I increase negative.
 
- Map -> Key-value collection.
-put() -> Stores a key-value pair.
-else if -> Checks another condition when the first condition is false.
-> and < -> Numeric comparisons.
+Zero is ignored.
 
- FLOW
+IMPORTANT KEYWORDS
 
- Read each number -> positive? count positive -> negative? count negative -> return both
- */
+>
+-> Greater-than operator.
+
+<
+-> Less-than operator.
+
+else if
+-> Checks another condition.
+
+count++
+-> Increases the counter.
+
+FLOW
+
+Number -> positive? -> positive++ -> otherwise negative? -> negative++
+*/

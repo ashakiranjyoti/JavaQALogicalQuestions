@@ -1,37 +1,49 @@
 public class Q12CountVowels {
 
-    static int countVowels(String str) {
-        String value = str.toLowerCase();
-        String vowels = "aeiou";
+    public static void main(String[] args) {
+
+        String str = "javascript";
+        str = str.toLowerCase();
+
         int count = 0;
 
-        for (int i = 0; i < value.length(); i++) {
-            if (vowels.indexOf(value.charAt(i)) != -1) {
+        for (int i = 0; i < str.length(); i++) {
+
+            char ch = str.charAt(i);
+
+            if (ch == 'a' || ch == 'e' || ch == 'i' ||
+                ch == 'o' || ch == 'u') {
+
                 count++;
             }
         }
 
-        return count;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(countVowels("javascript"));
+        System.out.println(count);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I normalize the string to lowercase and check every character against the vowel string. If indexOf() finds the character, I increment the count.
+I check every character in the string.
 
- IMPORTANT KEYWORDS
+If the character is a, e, i, o, or u, I increase the count.
 
- indexOf() -> Returns the position of a character or -1 when not found.
-String -> Stores text.
-charAt() -> Returns a character.
-!= -> Checks that two values are not equal.
+IMPORTANT KEYWORDS
 
- FLOW
+char
+-> Stores one character.
 
- Character -> check in "aeiou" -> count matching vowels -> final count
- */
+||
+-> Logical OR.
+
+charAt()
+-> Gets a character at an index.
+
+count++
+-> Increases the count.
+
+FLOW
+
+String -> check each character -> vowel? -> count++
+*/

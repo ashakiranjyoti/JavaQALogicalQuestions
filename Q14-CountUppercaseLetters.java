@@ -1,35 +1,46 @@
 public class Q14CountUppercaseLetters {
 
-    static int countUppercase(String str) {
+    public static void main(String[] args) {
+
+        String str = "JavaASScript";
+
         int count = 0;
 
         for (int i = 0; i < str.length(); i++) {
-            if (Character.isUpperCase(str.charAt(i))) {
+
+            char ch = str.charAt(i);
+
+            if (ch >= 'A' && ch <= 'Z') {
                 count++;
             }
         }
 
-        return count;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(countUppercase("JavaASScript"));
+        System.out.println(count);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I scan each character and use Character.isUpperCase() to check whether it is uppercase.
+I check every character.
 
- IMPORTANT KEYWORDS
+If a character is between A and Z, I count it as uppercase.
 
- Character -> Java utility class for character operations.
-isUpperCase() -> Checks whether a character is uppercase.
-charAt() -> Gets a character at an index.
-count++ -> Increases the counter.
+IMPORTANT KEYWORDS
 
- FLOW
+char
+-> Stores one character.
 
- String -> each character -> isUpperCase? -> increment -> final count
- */
+>= and <=
+-> Comparison operators.
+
+&&
+-> Logical AND.
+
+count++
+-> Increases the count.
+
+FLOW
+
+Character -> A to Z? -> yes -> count++
+*/

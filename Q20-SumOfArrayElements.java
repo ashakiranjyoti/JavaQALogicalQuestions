@@ -1,32 +1,43 @@
 public class Q20SumOfArrayElements {
 
-    static int findSum(int[] arr) {
+    public static void main(String[] args) {
+
+        int[] numbers = {10, 20, 30, 40};
+
         int sum = 0;
 
-        for (int num : arr) {
-            sum += num;
+        for (int num : numbers) {
+            sum = sum + num;
         }
 
-        return sum;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(findSum(new int[]{10, 20, 30, 40}));
+        System.out.println(sum);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I initialize sum to zero and add every array element to it. Finally, I return the accumulated total.
+I start sum with 0.
 
- IMPORTANT KEYWORDS
+Then I add every array element to sum.
 
- for-each -> Iterates through values directly.
-sum += num -> Adds current number to sum.
-int -> Integer data type.
+Finally, I print the total.
 
- FLOW
+IMPORTANT KEYWORDS
 
- sum=0 -> add each element -> return total
- */
+int
+-> Stores an integer.
+
+for-each
+-> Loops through every array value.
+
++
+-> Adds values.
+
+sum
+-> Stores the total.
+
+FLOW
+
+sum=0 -> add each number -> final sum
+*/

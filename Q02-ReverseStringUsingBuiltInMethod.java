@@ -1,28 +1,40 @@
 public class Q02ReverseStringUsingBuiltInMethod {
 
-    static String reverseString(String str) {
-        return new StringBuilder(str).reverse().toString();
-    }
-
     public static void main(String[] args) {
-        System.out.println(reverseString("BTS"));
+
+        String str = "BTS";
+
+        String reverse = new StringBuilder(str).reverse().toString();
+
+        System.out.println(reverse);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I use Java's StringBuilder class. I create a StringBuilder from the input, call reverse(), and convert the result back to a String with toString().
+I store the string in a variable.
 
- IMPORTANT KEYWORDS
+I use StringBuilder to reverse the string and then print the reversed value.
 
- String -> Java class used to store text.
-StringBuilder -> Mutable class used to build and modify strings.
-new -> Creates an object.
-reverse() -> Reverses the StringBuilder content.
-toString() -> Converts the object into a String.
+IMPORTANT KEYWORDS
 
- FLOW
+String
+-> Stores text.
 
- String -> StringBuilder -> reverse() -> toString() -> reversed String
- */
+StringBuilder
+-> Java class used to modify strings.
+
+reverse()
+-> Reverses the characters.
+
+toString()
+-> Converts the StringBuilder value into a String.
+
+new
+-> Creates an object.
+
+FLOW
+
+String -> StringBuilder -> reverse() -> output
+*/

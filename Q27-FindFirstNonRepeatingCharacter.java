@@ -1,42 +1,56 @@
 import java.util.HashMap;
-import java.util.Map;
 
 public class Q27FindFirstNonRepeatingCharacter {
 
-    static Character firstNonRepeatingChar(String str) {
-        Map<Character, Integer> frequency = new HashMap<>();
+    public static void main(String[] args) {
+
+        String str = "aabbcde";
+
+        HashMap<Character, Integer> frequency = new HashMap<>();
 
         for (char ch : str.toCharArray()) {
-            frequency.put(ch, frequency.getOrDefault(ch, 0) + 1);
-        }
 
-        for (char ch : str.toCharArray()) {
-            if (frequency.get(ch) == 1) {
-                return ch;
+            if (frequency.containsKey(ch)) {
+                frequency.put(ch, frequency.get(ch) + 1);
+            } else {
+                frequency.put(ch, 1);
             }
         }
 
-        return null;
-    }
+        for (char ch : str.toCharArray()) {
 
-    public static void main(String[] args) {
-        System.out.println(firstNonRepeatingChar("aabbcde"));
+            if (frequency.get(ch) == 1) {
+                System.out.println(ch);
+                break;
+            }
+        }
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I make one pass to count character frequency. Then I traverse the original string again so the first character with frequency 1 is returned.
+First I count the frequency of each character.
 
- IMPORTANT KEYWORDS
+Then I go through the original string again.
 
- Character -> Wrapper class for char.
-get() -> Retrieves a value from a map.
-return null -> Returns no character when every character repeats.
-toCharArray() -> Converts String to character array.
+The first character whose frequency is 1 is the first non-repeating character.
 
- FLOW
+IMPORTANT KEYWORDS
 
- First pass -> frequency count -> second pass in original order -> first count 1
- */
+HashMap
+-> Stores character and frequency.
+
+get()
+-> Gets a character's frequency.
+
+toCharArray()
+-> Converts String into a char array.
+
+break
+-> Stops the loop.
+
+FLOW
+
+Count frequency -> check original order -> frequency 1 -> first non-repeating
+*/

@@ -1,35 +1,45 @@
 public class Q07FindLargestNumber {
 
-    static int findLargest(int[] arr) {
-        int largest = arr[0];
+    public static void main(String[] args) {
 
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] > largest) {
-                largest = arr[i];
+        int[] numbers = {2, 6, 4, 1, 9};
+
+        int largest = numbers[0];
+
+        for (int i = 1; i < numbers.length; i++) {
+
+            if (numbers[i] > largest) {
+                largest = numbers[i];
             }
         }
 
-        return largest;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(findLargest(new int[]{2, 6, 4, 1, 9}));
+        System.out.println(largest);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I assume the first element is largest and compare each remaining value with it. Whenever I find a bigger value, I update largest.
+I assume the first number is the largest.
 
- IMPORTANT KEYWORDS
+Then I compare every next number with largest.
+If a bigger number is found, I update largest.
 
- if -> Runs code only when a condition is true.
-> -> Greater-than comparison operator.
-int -> Integer data type.
-return -> Returns the final largest value.
+IMPORTANT KEYWORDS
 
- FLOW
+if
+-> Checks a condition.
 
- Assume first value -> compare each next value -> update when bigger -> final largest
- */
+>
+-> Greater-than operator.
+
+int[]
+-> Integer array.
+
+largest
+-> Stores the current largest value.
+
+FLOW
+
+First number -> compare -> bigger? -> update -> final largest
+*/

@@ -1,40 +1,48 @@
 public class Q16FindSecondLargestNumber {
 
-    static Integer secondLargest(int[] arr) {
-        Integer largest = null;
-        Integer secondLargest = null;
+    public static void main(String[] args) {
 
-        for (int num : arr) {
-            if (largest == null || num > largest) {
+        int[] numbers = {10, 5, 8, 20, 15};
+
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+
+        for (int num : numbers) {
+
+            if (num > largest) {
                 secondLargest = largest;
                 largest = num;
-            } else if (num != largest &&
-                       (secondLargest == null || num > secondLargest)) {
+            } else if (num > secondLargest && num != largest) {
                 secondLargest = num;
             }
         }
 
-        return secondLargest;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(secondLargest(new int[]{10, 5, 8, 20, 15}));
+        System.out.println(secondLargest);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I maintain two variables: the largest value and the second largest distinct value. When a new largest number appears, the old largest becomes second largest.
+I keep two variables: largest and secondLargest.
 
- IMPORTANT KEYWORDS
+When I find a new largest number, the old largest becomes secondLargest.
 
- Integer -> Wrapper class that can also hold null.
-null -> Means no object/value is assigned.
-for-each -> Iterates directly over array values.
-&& -> Logical AND.
+IMPORTANT KEYWORDS
 
- FLOW
+Integer.MIN_VALUE
+-> Smallest possible int value.
 
- Read each number -> update largest/second largest -> return second largest
- */
+for-each
+-> Loops directly through array values.
+
+else if
+-> Checks another condition.
+
+&&
+-> Logical AND.
+
+FLOW
+
+Number -> compare with largest -> update largest / secondLargest
+*/

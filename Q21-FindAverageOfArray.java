@@ -1,33 +1,45 @@
 public class Q21FindAverageOfArray {
 
-    static double findAverage(int[] arr) {
+    public static void main(String[] args) {
+
+        int[] numbers = {10, 20, 30, 40};
+
         int sum = 0;
 
-        for (int num : arr) {
-            sum += num;
+        for (int num : numbers) {
+            sum = sum + num;
         }
 
-        return (double) sum / arr.length;
-    }
+        double average = (double) sum / numbers.length;
 
-    public static void main(String[] args) {
-        System.out.println(findAverage(new int[]{10, 20, 30, 40}));
+        System.out.println(average);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I first calculate the sum and then divide it by the number of elements. I cast sum to double so the division can produce a decimal result when needed.
+I first calculate the total sum.
 
- IMPORTANT KEYWORDS
+Then I divide the sum by the number of elements.
 
- double -> Stores decimal values.
-(double) -> Type casting from int to double.
-arr.length -> Number of array elements.
-for-each -> Iterates through the array.
+I use double so the answer can contain decimal values.
 
- FLOW
+IMPORTANT KEYWORDS
 
- Sum -> divide by arr.length -> average
- */
+double
+-> Stores decimal values.
+
+(double)
+-> Type casting.
+
+length
+-> Number of array elements.
+
+/
+-> Division operator.
+
+FLOW
+
+Array -> sum -> divide by length -> average
+*/

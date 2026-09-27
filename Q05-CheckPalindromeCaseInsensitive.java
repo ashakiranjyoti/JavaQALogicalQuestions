@@ -1,29 +1,45 @@
 public class Q05CheckPalindromeCaseInsensitive {
 
-    static boolean isPalindrome(String str) {
-        String value = str.toLowerCase();
-        String reverse = new StringBuilder(value).reverse().toString();
-        return value.equals(reverse);
-    }
-
     public static void main(String[] args) {
-        System.out.println(isPalindrome("MaDam"));
+
+        String str = "MaDam";
+
+        str = str.toLowerCase();
+
+        String reverse = new StringBuilder(str).reverse().toString();
+
+        if (str.equals(reverse)) {
+            System.out.println("Palindrome");
+        } else {
+            System.out.println("Not Palindrome");
+        }
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I first convert the input to lowercase so uppercase and lowercase letters are treated the same. Then I reverse the normalized string and compare it with the original normalized value.
+I first convert the string to lowercase.
 
- IMPORTANT KEYWORDS
+Then I reverse it and compare both values.
 
- toLowerCase() -> Converts letters to lowercase.
-equals() -> Compares string content.
-StringBuilder -> Used to reverse the string.
-boolean -> Stores true or false.
+This makes the check case-insensitive.
 
- FLOW
+IMPORTANT KEYWORDS
 
- Input -> lowercase -> reverse -> compare -> palindrome result
- */
+toLowerCase()
+-> Converts a string to lowercase.
+
+equals()
+-> Compares String content.
+
+reverse()
+-> Reverses the StringBuilder.
+
+if-else
+-> Used to decide the output.
+
+FLOW
+
+Input -> lowercase -> reverse -> compare -> result
+*/

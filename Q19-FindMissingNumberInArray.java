@@ -1,35 +1,49 @@
 public class Q19FindMissingNumberInArray {
 
-    static int findMissing(int[] arr) {
-        int n = arr.length + 1;
+    public static void main(String[] args) {
+
+        int[] numbers = {1, 2, 3, 5};
+
+        int n = numbers.length + 1;
+
         int total = n * (n + 1) / 2;
 
         int sum = 0;
-        for (int num : arr) {
-            sum += num;
+
+        for (int num : numbers) {
+            sum = sum + num;
         }
 
-        return total - sum;
-    }
+        int missing = total - sum;
 
-    public static void main(String[] args) {
-        System.out.println(findMissing(new int[]{1, 2, 3, 5}));
+        System.out.println(missing);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I calculate the expected sum from 1 to n using the arithmetic-series formula. Then I subtract the actual array sum. The difference is the missing number.
+I calculate the expected sum from 1 to n.
 
- IMPORTANT KEYWORDS
+Then I calculate the actual sum of the array.
 
- Formula -> n * (n + 1) / 2 gives sum from 1 to n.
-for-each -> Iterates through array values.
-sum += num -> Adds each number to sum.
-return -> Returns the difference.
+The difference between them is the missing number.
 
- FLOW
+IMPORTANT KEYWORDS
 
- Expected sum -> actual sum -> subtract -> missing number
- */
+length
+-> Number of elements.
+
+for-each
+-> Loops through values.
+
+sum
+-> Stores the running total.
+
+Formula
+-> n * (n + 1) / 2 gives the sum from 1 to n.
+
+FLOW
+
+Expected sum -> actual sum -> subtract -> missing number
+*/

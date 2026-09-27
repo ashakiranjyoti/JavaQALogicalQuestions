@@ -1,38 +1,57 @@
 public class Q28CheckPrimeNumber {
 
-    static boolean isPrime(int num) {
-        if (num <= 1) {
-            return false;
-        }
+    public static void main(String[] args) {
 
-        for (int i = 2; i < num; i++) {
-            if (num % i == 0) {
-                return false;
+        int num = 7;
+        boolean prime = true;
+
+        if (num <= 1) {
+            prime = false;
+        } else {
+
+            for (int i = 2; i < num; i++) {
+
+                if (num % i == 0) {
+                    prime = false;
+                    break;
+                }
             }
         }
 
-        return true;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(isPrime(7));
-        System.out.println(isPrime(8));
+        if (prime) {
+            System.out.println("Prime");
+        } else {
+            System.out.println("Not Prime");
+        }
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I first reject numbers less than or equal to 1. Then I check whether any value from 2 to num-1 divides the number exactly. If one does, the number is not prime.
+I assume the number is prime.
 
- IMPORTANT KEYWORDS
+Numbers less than or equal to 1 are not prime.
 
- <= -> Less-than-or-equal comparison.
-% -> Modulus operator.
-boolean -> Stores true or false.
-false/true -> Boolean literals.
+Then I check whether any number from 2 to num-1 divides it completely.
 
- FLOW
+If a divisor is found, it is not prime.
 
- num <= 1? -> false -> check divisors -> divisor found? false : true
- */
+IMPORTANT KEYWORDS
+
+boolean
+-> Stores true or false.
+
+%
+-> Returns the remainder.
+
+break
+-> Stops the loop.
+
+<=
+-> Less-than-or-equal operator.
+
+FLOW
+
+Number -> <=1? -> not prime -> otherwise check divisors -> result
+*/

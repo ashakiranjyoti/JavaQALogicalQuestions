@@ -1,33 +1,41 @@
 public class Q29FindFactorialOfNumber {
 
-    static long factorial(int num) {
-        long result = 1;
+    public static void main(String[] args) {
+
+        int num = 5;
+
+        int factorial = 1;
 
         for (int i = 1; i <= num; i++) {
-            result = result * i;
+            factorial = factorial * i;
         }
 
-        return result;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(factorial(5));
+        System.out.println(factorial);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I start the result at 1 and multiply it by every number from 1 through the input value.
+I start factorial with 1.
 
- IMPORTANT KEYWORDS
+Then I multiply it by every number from 1 to num.
 
- long -> Integer type with a larger range than int.
-for -> Repeats multiplication.
-* -> Multiplication operator.
-result -> Stores the running factorial value.
+IMPORTANT KEYWORDS
 
- FLOW
+factorial
+-> Stores the running result.
 
- result=1 -> multiply by 1 -> 2 -> ... -> num -> factorial
- */
+*
+-> Multiplication operator.
+
+for
+-> Repeats multiplication.
+
+<=
+-> Less-than-or-equal comparison.
+
+FLOW
+
+1 -> 1*2 -> 1*2*3 -> ... -> factorial
+*/

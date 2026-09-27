@@ -1,34 +1,43 @@
 public class Q03ReverseStringWithoutBuiltInMethod {
 
-    static String reverseString(String str) {
+    public static void main(String[] args) {
+
+        String str = "BTS";
         String reverse = "";
 
         for (int i = str.length() - 1; i >= 0; i--) {
-            reverse += str.charAt(i);
+            reverse = reverse + str.charAt(i);
         }
 
-        return reverse;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(reverseString("BTS"));
+        System.out.println(reverse);
     }
 }
 
- /*
- HOW THIS FILE WORKS
+/*
+HOW THIS FILE WORKS
 
- I start from the last character and move toward the first character. Each character is added to a new string, producing the reversed value without using reverse().
+I start from the last character of the string and move backward.
 
- IMPORTANT KEYWORDS
+Each character is added to the reverse variable.
 
- charAt() -> Returns the character at a given index.
-length() -> Returns the string length.
-for -> Repeats a block of code.
-+= -> Adds the right-side value to the existing variable.
-char -> Java data type for a single character.
+IMPORTANT KEYWORDS
 
- FLOW
+String
+-> Stores text.
 
- Last character -> move backward -> append character -> continue until index 0
- */
+length()
+-> Returns the number of characters.
+
+charAt()
+-> Returns the character at a given index.
+
+for
+-> Repeats code.
+
++
+-> Concatenates strings.
+
+FLOW
+
+Last index -> move backward -> take character -> add to reverse
+*/
